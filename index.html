@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Interactive card details form</title>
+
+    <link rel="stylesheet" href="styles.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <main>
+      <div class="header-area">
+        <div class="header-bg">
+          <img src="images/bg-main-mobile.png" alt="cover-photo" />
+        </div>
+        <div class="card-container">
+          <img src="/images/bg-card-back.png" alt="" />
+        </div>
+        <div class="card-container">
+          <img src="/images/bg-card-front.png" alt="" />
+        </div>
+      </div>
+      <div class="main-content">
+        <form>
+          <div class="input-item">
+            <label for="name">Cardholder Name:</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="e.g. Jane Appleseed"
+            />
+          </div>
+          <div class="input-item">
+            <label for="name">Card Number:</label>
+            <input
+              type="text"
+              id="card-number"
+              name="card-number"
+              placeholder="e.g. 1234 5678 9123 0000"
+            />
+          </div>
+          <div class="input-item expire">
+            <label for="exp">Exp. Date (MM/YY)</label>
+            <input type="number" id="exp" name="exp" placeholder="MM" />
+            <input type="number" id="exp" name="exp" placeholder="YY" />
+          </div>
+          <div class="input-item">
+            <label for="name">CC</label>
+            <input type="number" id="CC" name="CC" placeholder="e.g. 123" />
+          </div>
+          <button>Confirm</button>
+        </form>
+      </div>
+    </main>
+
+    <!-- Completed state start -->
+
+    <script src="script.js" type="text/javscript"></script>
+  </body>
+</html>
