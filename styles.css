@@ -11,8 +11,10 @@ body {
   height: 100%;
 }
 body {
+  font-family: "Space Grotesk", sans-serif;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  font-size: 1.125rem;
 }
 img,
 picture,
@@ -40,4 +42,96 @@ h6 {
 #root,
 #__next {
   isolation: isolate;
+}
+.header-area {
+  background-image: url(/images/bg-main-mobile.png);
+  position: relative;
+  height: 15rem;
+  margin-bottom: 50px;
+}
+input,
+button {
+  border-radius: 8px;
+  border: 1px solid hsl(270, 3%, 87%);
+}
+.card-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.card-container {
+  width: 275px;
+  height: 120px;
+  position: absolute;
+}
+.back-card-container {
+  top: 40px;
+  right: 20px;
+}
+.front-card-container {
+  bottom: -5px;
+  left: 20px;
+}
+.main-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 1.2rem;
+}
+.holder-name, .card-number, .card-security{
+  margin-bottom: 12px;
+}
+/* styling for active errors */
+
+.error {
+  display: none;
+  color: hsl(0, 100%, 66%);
+  margin-top: 6px;
+}
+.input-error{
+  border-color: hsl(0, 100%, 66%);
+}
+/* end styling for errors */
+
+input {
+  padding: 0.3rem 0;
+  padding-left: 0.4rem;
+}
+label{
+  color: hsl(278, 68%, 11%);
+  margin-bottom: 3px;
+}
+::placeholder {
+  color: hsl(270, 3%, 87%);
+}
+.input-item {
+  display: flex;
+  flex-direction: column;
+}
+.card-security {
+  display: flex;
+  justify-content: space-between;
+}
+.expire,
+.cvc-container {
+  width: 50%;
+}
+
+.mm-yy {
+  display: flex;
+  justify-content: space-around;
+}
+.month-input,
+.year-input {
+  margin-right: 5px;
+}
+.mm-yy input {
+  width: 100%;
+}
+button {
+  width: 100%;
+  padding: 0.4rem;
+  background-color: hsl(278, 68%, 11%);
+  color: white;
 }
