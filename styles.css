@@ -61,7 +61,6 @@ button {
 }
 .card-container {
   width: 275px;
-  height: 120px;
   position: absolute;
 }
 .back-card-container {
@@ -69,8 +68,34 @@ button {
   right: 20px;
 }
 .front-card-container {
-  bottom: -5px;
+  bottom: -35px;
   left: 20px;
+}
+.front-card-content{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  color: white;
+  padding: 0 1rem;
+
+}
+.front-card-content p{
+  margin-top: 24px;
+  text-align: center;
+}
+.name-expire-dummy{
+  display: flex;
+  justify-content: space-between;
+  font-size: .7rem;
+}
+.floating-text{
+  position: absolute;
+  top: 64px;
+  right: 40px;
+  color: white;
+  font-size: .8rem;
 }
 .main-content {
   display: flex;
