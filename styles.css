@@ -101,6 +101,7 @@ input {
 label{
   color: hsl(278, 68%, 11%);
   margin-bottom: 3px;
+  font-weight: bold;
 }
 ::placeholder {
   color: hsl(270, 3%, 87%);
