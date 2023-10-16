@@ -84,6 +84,7 @@ button {
 .front-card-content p{
   margin-top: 24px;
   text-align: center;
+  user-select: none;
 }
 .name-expire-dummy{
   display: flex;
