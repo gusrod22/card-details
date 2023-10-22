@@ -54,10 +54,10 @@
                 />
               </svg>
             </div>
-            <p>0000 0000 0000 0000</p>
+            <p id="card-number">0000 0000 0000 0000</p>
             <div class="name-expire-dummy">
-              <p>Jane Appleseed</p>
-              <p>00/00</p>
+              <p id="card-name">Jane Appleseed</p>
+              <p id="card-expire">00/00</p>
             </div>
           </div>
         </div>
@@ -71,6 +71,7 @@
               id="name"
               name="name"
               placeholder="e.g. Jane Appleseed"
+              required
             />
           </div>
           <div class="input-item card-number">
@@ -80,37 +81,41 @@
               id="card-number"
               name="card-number"
               placeholder="e.g. 1234 5678 9123 0000"
+              required
             />
             <p class="error">Wrong format, numbers only</p>
           </div>
           <div class="card-security">
             <div class="input-item expire">
-              <label for="exp">Exp. Date (MM/YY)</label>
+              <label for="mm">Exp. Date (MM/YY)</label>
               <div class="mm-yy">
                 <input
                   class="month-input"
                   type="number"
-                  id="exp"
-                  name="exp"
+                  id="mm"
+                  name="mm"
                   placeholder="MM"
+                  required
                 />
                 <input
                   class="year-input"
                   type="number"
-                  id="exp"
-                  name="exp"
+                  id="yy"
+                  name="yy"
                   placeholder="YY"
+                  required
                 />
               </div>
               <p class="error">Can't be blank</p>
             </div>
             <div class="input-item cvc-container">
               <label for="name">CVC</label>
-              <input type="number" id="CC" name="CC" placeholder="e.g. 123" />
+              <input type="number" id="CC" name="CC" placeholder="e.g. 123"
+              required />
               <p class="error">Can't be blank</p>
             </div>
           </div>
-          <button>Confirm</button>
+          <button id="submit-button">Confirm</button>
         </form>
       </div>
       <div class="complete-state main-content">
@@ -146,6 +151,6 @@
 
     <!-- Completed state start -->
 
-    <script src="script.js" type="text/javscript"></script>
+    <script src="script.js" type="text/javascript"></script>
   </body>
 </html>

@@ -123,6 +123,7 @@ button {
 input {
   padding: 0.3rem 0;
   padding-left: 0.4rem;
+  cursor: pointer;
 }
 label{
   color: hsl(278, 68%, 11%);
@@ -162,6 +163,7 @@ button {
   background-color: hsl(278, 68%, 11%);
   color: white;
   margin-top: 20px;
+  cursor: pointer;
 }
 .complete-state{
   display: none;
