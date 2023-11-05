@@ -94,6 +94,7 @@
                   class="month-input"
                   type="number"
                   id="mm"
+                  oninput="limitInputLength(this,2)"
                   name="mm"
                   placeholder="MM"
                   required
@@ -103,6 +104,7 @@
                     class="year-input"
                     type="number"
                     id="yy"
+                    oninput="limitInputLength(this,2)"
                     name="yy"
                     placeholder="YY"
                     required
@@ -116,6 +118,7 @@
               <input
                 type="number"
                 id="CC"
+                oninput="limitInputLength(this,3)"
                 name="CC"
                 placeholder="e.g. 123"
                 required
