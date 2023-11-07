@@ -29,7 +29,7 @@
         <div class="back-card-container card-container">
           <img src="/images/bg-card-back.png" alt="" />
           <div class="floating-text">
-            <p>000</p>
+            <p id="cvc">000</p>
           </div>
         </div>
         <div class="front-card-container card-container">
@@ -57,7 +57,12 @@
             <p id="card-number">0000 0000 0000 0000</p>
             <div class="name-expire-dummy">
               <p id="card-name">Jane Appleseed</p>
-              <p id="card-expire">00/00</p>
+              <div class="exp-date">
+                <p id="mm">00</p>
+                <p>/</p>
+                <p id="yy">00</p>
+              </div>
+              <!-- <p id="card-expire">00/00</p> -->
             </div>
           </div>
         </div>
@@ -72,6 +77,7 @@
               name="name"
               placeholder="e.g. Jane Appleseed"
               required
+              oninput="updateCardContent('card-name', this.value)"
             />
             <p class="error">Please enter a name</p>
           </div>
@@ -82,6 +88,7 @@
               id="card-number"
               name="card-number"
               placeholder="e.g. 1234 5678 9123 0000"
+              oninput="updateCardContent('card-number', this.value)"
               required
             />
             <p class="error">Wrong format, numbers only</p>
@@ -94,7 +101,7 @@
                   class="month-input"
                   type="number"
                   id="mm"
-                  oninput="limitInputLength(this,2)"
+                  oninput="limitInputLength(this,2); updateCardContent('mm', this.value)"
                   name="mm"
                   placeholder="MM"
                   required
@@ -104,7 +111,7 @@
                     class="year-input"
                     type="number"
                     id="yy"
-                    oninput="limitInputLength(this,2)"
+                    oninput="limitInputLength(this,2); updateCardContent('yy', this.value)"
                     name="yy"
                     placeholder="YY"
                     required
@@ -118,7 +125,7 @@
               <input
                 type="number"
                 id="CC"
-                oninput="limitInputLength(this,3)"
+                oninput="limitInputLength(this,3); updateCardContent('cvc', this.value)"
                 name="CC"
                 placeholder="e.g. 123"
                 required

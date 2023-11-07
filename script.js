@@ -44,3 +44,7 @@ function limitInputLength(element, maxLength) {
     element.value = element.value.slice(0, maxLength);
   }
 }
+
+function updateCardContent(elementId, value) {
+  document.getElementById(elementId).textContent = value;
+}

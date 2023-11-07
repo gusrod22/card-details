@@ -108,6 +108,9 @@ button {
 .holder-name, .card-number, .card-security{
   margin-bottom: 12px;
 }
+.exp-date{
+  display: flex;
+}
 /* styling for active errors */
 
 .error {
