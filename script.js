@@ -1,11 +1,15 @@
 const submitButton = document.querySelector("#submit-button");
 const form = document.querySelector("form");
+
 submitButton.addEventListener("click", function (event) {
   event.preventDefault();
   console.log("button clicked");
   const inputItems = form.querySelectorAll(".input-item");
   const initialState = document.querySelector(".initial-state");
   const completeState = document.querySelector(".complete-state");
+
+  let formIsValid = true;
+
   for (const inputItem of inputItems) {
     const input = inputItem.querySelector("input");
     const error = inputItem.querySelector(".error");
@@ -20,6 +24,7 @@ submitButton.addEventListener("click", function (event) {
         }
         input.classList.add("input-error");
       } else {
+        formIsValid = true;
         if (error) {
           error.style.display = "none";
         }
@@ -32,15 +37,21 @@ submitButton.addEventListener("click", function (event) {
         }
         input.classList.add("input-error");
       } else {
+        formIsValid = true;
         if (error) {
           error.style.display = "none";
         }
         input.classList.remove("input-error");
       }
     }
+    if (input.classList.contains("input-error")) {
+      formIsValid = false;
+    }
   }
-  initialState.style.display = "none";
-  completeState.style.display = "block";
+  if (formIsValid) {
+    initialState.style.display = "none";
+    completeState.style.display = "block";
+  }
 });
 
 function limitInputLength(element, maxLength) {
