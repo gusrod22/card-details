@@ -4,6 +4,8 @@ submitButton.addEventListener("click", function (event) {
   event.preventDefault();
   console.log("button clicked");
   const inputItems = form.querySelectorAll(".input-item");
+  const initialState = document.querySelector(".initial-state");
+  const completeState = document.querySelector(".complete-state");
   for (const inputItem of inputItems) {
     const input = inputItem.querySelector("input");
     const error = inputItem.querySelector(".error");
@@ -37,6 +39,8 @@ submitButton.addEventListener("click", function (event) {
       }
     }
   }
+  initialState.style.display = "none";
+  completeState.style.display = "block";
 });
 
 function limitInputLength(element, maxLength) {
