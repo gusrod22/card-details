@@ -99,6 +99,7 @@ button {
   font-size: .8rem;
 }
 .main-content {
+  font-size: 1.125rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -170,4 +171,20 @@ button {
 }
 .complete-state{
   display: none;
+  text-align: center;
+  height: 100%;
 }
+.complete-icon{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.thank-you-heading{
+  font-size: 2rem;
+}
+.p-added-details{
+  color: hsl(279, 6%, 55%);
+}
+/* .initial-state{
+  display: none;
+} */

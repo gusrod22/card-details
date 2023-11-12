@@ -1,12 +1,13 @@
 const submitButton = document.querySelector("#submit-button");
 const form = document.querySelector("form");
+const initialState = document.querySelector(".initial-state");
+const completeState = document.querySelector(".complete-state");
+const continueButton = document.querySelector("#continue-button");
 
 submitButton.addEventListener("click", function (event) {
   event.preventDefault();
   console.log("button clicked");
   const inputItems = form.querySelectorAll(".input-item");
-  const initialState = document.querySelector(".initial-state");
-  const completeState = document.querySelector(".complete-state");
 
   let formIsValid = true;
 
@@ -52,6 +53,13 @@ submitButton.addEventListener("click", function (event) {
     initialState.style.display = "none";
     completeState.style.display = "block";
   }
+});
+
+continueButton.addEventListener("click", function () {
+  form.reset();
+
+  initialState.style.display = "block";
+  completeState.style.display = "none";
 });
 
 function limitInputLength(element, maxLength) {
