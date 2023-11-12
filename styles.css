@@ -43,11 +43,26 @@ h6 {
 #__next {
   isolation: isolate;
 }
+main{
+  /* max-width: 450px; */
+}
+.main-layout{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .header-area {
-  background-image: url(/images/bg-main-mobile.png);
   position: relative;
-  height: 15rem;
+  height: auto;
   margin-bottom: 50px;
+}
+.bg-image-container{
+  height: 100%;
+}
+.bg-image-container img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 input,
 button {
@@ -185,6 +200,19 @@ button {
 .p-added-details{
   color: hsl(279, 6%, 55%);
 }
-/* .initial-state{
-  display: none;
-} */
+
+@media screen and (min-width: 900px) {
+  main{
+    width: 100%;
+    display: flex;
+  }
+  .header-area{
+    margin-bottom: 0;
+  }
+  .main-content{
+    width: 75%;
+  }
+  form{
+    padding: 6rem;
+  }
+}

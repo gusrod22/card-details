@@ -24,157 +24,159 @@
     />
   </head>
   <body>
-    <main>
-      <div class="header-area">
-        <div class="back-card-container card-container">
-          <img src="/images/bg-card-back.png" alt="" />
-          <div class="floating-text">
-            <p id="cvc">000</p>
+    <div class="main-layout">
+      <main>
+        <div class="header-area">
+          <div class="bg-image-container">
+            <img src="/images/bg-main-mobile.png" alt="" />
+          </div>
+          <div class="back-card-container card-container">
+            <img src="/images/bg-card-back.png" alt="" />
+            <div class="floating-text">
+              <p id="cvc">000</p>
+            </div>
+          </div>
+          <div class="front-card-container card-container">
+            <img src="/images/bg-card-front.png" alt="" />
+            <div class="front-card-content">
+              <div class="card-logo-container">
+                <svg
+                  viewbox="0 0 404 47"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <ellipse
+                    cx="23.478"
+                    cy="23.5"
+                    rx="23.478"
+                    ry="23.5"
+                    fill="#fff"
+                  />
+                  <path
+                    d="M83.5 23.5c0 5.565-4.507 10.075-10.065 10.075-5.559 0-10.065-4.51-10.065-10.075 0-5.565 4.506-10.075 10.065-10.075 5.558 0 10.065 4.51 10.065 10.075Z"
+                    stroke="#fff"
+                  />
+                </svg>
+              </div>
+              <p id="card-number">0000 0000 0000 0000</p>
+              <div class="name-expire-dummy">
+                <p id="card-name">Jane Appleseed</p>
+                <div class="exp-date">
+                  <p id="mm">00</p>
+                  <p>/</p>
+                  <p id="yy">00</p>
+                </div>
+                <!-- <p id="card-expire">00/00</p> -->
+              </div>
+            </div>
           </div>
         </div>
-        <div class="front-card-container card-container">
-          <img src="/images/bg-card-front.png" alt="" />
-          <div class="front-card-content">
-            <div class="card-logo-container">
+        <div class="initial-state main-content">
+          <form>
+            <div class="input-item holder-name">
+              <label for="name">Cardholder Name:</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="e.g. Jane Appleseed"
+                required
+                oninput="updateCardContent('card-name', this.value)"
+              />
+              <p class="error">Please enter a name</p>
+            </div>
+            <div class="input-item card-number">
+              <label for="name">Card Number:</label>
+              <input
+                type="text"
+                id="card-number"
+                name="card-number"
+                placeholder="e.g. 1234 5678 9123 0000"
+                oninput="updateCardContent('card-number', this.value)"
+                required
+              />
+              <p class="error">Wrong format, numbers only</p>
+            </div>
+            <div class="card-security">
+              <div class="input-item expire">
+                <label for="mm">Exp. Date (MM/YY)</label>
+                <div class="mm-yy">
+                  <input
+                    class="month-input"
+                    type="number"
+                    id="mm"
+                    oninput="limitInputLength(this,2); updateCardContent('mm', this.value)"
+                    name="mm"
+                    placeholder="MM"
+                    required
+                  />
+                  <div class="input-item">
+                    <input
+                      class="year-input"
+                      type="number"
+                      id="yy"
+                      oninput="limitInputLength(this,2); updateCardContent('yy', this.value)"
+                      name="yy"
+                      placeholder="YY"
+                      required
+                    />
+                  </div>
+                </div>
+                <p class="error">Can't be blank</p>
+              </div>
+              <div class="input-item cvc-container">
+                <label for="name">CVC</label>
+                <input
+                  type="number"
+                  id="CC"
+                  oninput="limitInputLength(this,3); updateCardContent('cvc', this.value)"
+                  name="CC"
+                  placeholder="e.g. 123"
+                  required
+                />
+                <p class="error">Can't be blank</p>
+              </div>
+            </div>
+            <button id="submit-button">Confirm</button>
+          </form>
+        </div>
+        <div class="complete-state main-content">
+          <div class="complete-content">
+            <div class="complete-icon">
               <svg
-                viewbox="0 0 404 47"
+                width="80"
+                height="80"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
               >
-                <ellipse
-                  cx="23.478"
-                  cy="23.5"
-                  rx="23.478"
-                  ry="23.5"
-                  fill="#fff"
-                />
+                <circle cx="40" cy="40" r="40" fill="url(#a)" />
                 <path
-                  d="M83.5 23.5c0 5.565-4.507 10.075-10.065 10.075-5.559 0-10.065-4.51-10.065-10.075 0-5.565 4.506-10.075 10.065-10.075 5.558 0 10.065 4.51 10.065 10.075Z"
+                  d="M28 39.92 36.08 48l16-16"
                   stroke="#fff"
+                  stroke-width="3"
                 />
+                <defs>
+                  <linearGradient
+                    id="a"
+                    x1="-23.014"
+                    y1="11.507"
+                    x2="0"
+                    y2="91.507"
+                    gradientUnits="userSpaceOnUse"
+                  >
+                    <stop stop-color="#6348FE" />
+                    <stop offset="1" stop-color="#610595" />
+                  </linearGradient>
+                </defs>
               </svg>
             </div>
-            <p id="card-number">0000 0000 0000 0000</p>
-            <div class="name-expire-dummy">
-              <p id="card-name">Jane Appleseed</p>
-              <div class="exp-date">
-                <p id="mm">00</p>
-                <p>/</p>
-                <p id="yy">00</p>
-              </div>
-              <!-- <p id="card-expire">00/00</p> -->
-            </div>
+            <p class="thank-you-heading">Thank you!</p>
+            <p class="p-added-details">We've added you card details</p>
+            <button id="continue-button">Continue</button>
           </div>
         </div>
-      </div>
-      <div class="initial-state main-content">
-        <form>
-          <div class="input-item holder-name">
-            <label for="name">Cardholder Name:</label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              placeholder="e.g. Jane Appleseed"
-              required
-              oninput="updateCardContent('card-name', this.value)"
-            />
-            <p class="error">Please enter a name</p>
-          </div>
-          <div class="input-item card-number">
-            <label for="name">Card Number:</label>
-            <input
-              type="text"
-              id="card-number"
-              name="card-number"
-              placeholder="e.g. 1234 5678 9123 0000"
-              oninput="updateCardContent('card-number', this.value)"
-              required
-            />
-            <p class="error">Wrong format, numbers only</p>
-          </div>
-          <div class="card-security">
-            <div class="input-item expire">
-              <label for="mm">Exp. Date (MM/YY)</label>
-              <div class="mm-yy">
-                <input
-                  class="month-input"
-                  type="number"
-                  id="mm"
-                  oninput="limitInputLength(this,2); updateCardContent('mm', this.value)"
-                  name="mm"
-                  placeholder="MM"
-                  required
-                />
-                <div class="input-item">
-                  <input
-                    class="year-input"
-                    type="number"
-                    id="yy"
-                    oninput="limitInputLength(this,2); updateCardContent('yy', this.value)"
-                    name="yy"
-                    placeholder="YY"
-                    required
-                  />
-                </div>
-              </div>
-              <p class="error">Can't be blank</p>
-            </div>
-            <div class="input-item cvc-container">
-              <label for="name">CVC</label>
-              <input
-                type="number"
-                id="CC"
-                oninput="limitInputLength(this,3); updateCardContent('cvc', this.value)"
-                name="CC"
-                placeholder="e.g. 123"
-                required
-              />
-              <p class="error">Can't be blank</p>
-            </div>
-          </div>
-          <button id="submit-button">Confirm</button>
-        </form>
-      </div>
-      <div class="complete-state main-content">
-        <div class="complete-content">
-          <div class="complete-icon">
-            <svg
-              width="80"
-              height="80"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <circle cx="40" cy="40" r="40" fill="url(#a)" />
-              <path
-                d="M28 39.92 36.08 48l16-16"
-                stroke="#fff"
-                stroke-width="3"
-              />
-              <defs>
-                <linearGradient
-                  id="a"
-                  x1="-23.014"
-                  y1="11.507"
-                  x2="0"
-                  y2="91.507"
-                  gradientUnits="userSpaceOnUse"
-                >
-                  <stop stop-color="#6348FE" />
-                  <stop offset="1" stop-color="#610595" />
-                </linearGradient>
-              </defs>
-            </svg>
-          </div>
-          <p class="thank-you-heading">Thank you!</p>
-          <p class="p-added-details">We've added you card details</p>
-          <button id="continue-button">Continue</button>
-        </div>
-      </div>
-    </main>
-
-    <!-- Completed state start -->
-
+      </main>
+    </div>
     <script src="script.js" type="text/javascript"></script>
   </body>
 </html>
