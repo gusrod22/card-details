@@ -43,23 +43,26 @@ h6 {
 #__next {
   isolation: isolate;
 }
-main{
-  /* max-width: 450px; */
+main {
+  height: 100%;
+  width: 100%;
 }
-.main-layout{
+.main-layout {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100%;
+  width: 100%;
 }
 .header-area {
   position: relative;
   height: auto;
   margin-bottom: 50px;
 }
-.bg-image-container{
+.bg-image-container {
   height: 100%;
 }
-.bg-image-container img{
+.bg-image-container img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -86,7 +89,7 @@ button {
   bottom: -35px;
   left: 20px;
 }
-.front-card-content{
+.front-card-content {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -94,24 +97,23 @@ button {
   width: 100%;
   color: white;
   padding: 0 1rem;
-
 }
-.front-card-content p{
+.front-card-content p {
   margin-top: 24px;
   text-align: center;
   user-select: none;
 }
-.name-expire-dummy{
+.name-expire-dummy {
   display: flex;
   justify-content: space-between;
-  font-size: .7rem;
+  font-size: 0.7rem;
 }
-.floating-text{
+.floating-text {
   position: absolute;
   top: 64px;
   right: 40px;
   color: white;
-  font-size: .8rem;
+  font-size: 0.8rem;
 }
 .main-content {
   font-size: 1.125rem;
@@ -121,10 +123,12 @@ button {
   flex-direction: column;
   padding: 1.2rem;
 }
-.holder-name, .card-number, .card-security{
+.holder-name,
+.card-number,
+.card-security {
   margin-bottom: 12px;
 }
-.exp-date{
+.exp-date {
   display: flex;
 }
 /* styling for active errors */
@@ -134,7 +138,7 @@ button {
   color: hsl(0, 100%, 66%);
   margin-top: 6px;
 }
-.input-error{
+.input-error {
   border-color: hsl(0, 100%, 66%);
 }
 /* end styling for errors */
@@ -144,7 +148,7 @@ input {
   padding-left: 0.4rem;
   cursor: pointer;
 }
-label{
+label {
   color: hsl(278, 68%, 11%);
   margin-bottom: 3px;
   font-weight: bold;
@@ -184,35 +188,49 @@ button {
   margin-top: 20px;
   cursor: pointer;
 }
-.complete-state{
+.complete-state {
   display: none;
   text-align: center;
   height: 100%;
 }
-.complete-icon{
+.complete-icon {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.thank-you-heading{
+.thank-you-heading {
   font-size: 2rem;
 }
-.p-added-details{
+.p-added-details {
   color: hsl(279, 6%, 55%);
 }
 
 @media screen and (min-width: 900px) {
-  main{
-    width: 100%;
-    display: flex;
-  }
-  .header-area{
-    margin-bottom: 0;
-  }
-  .main-content{
-    width: 75%;
-  }
-  form{
-    padding: 6rem;
-  }
+main {
+  width: 100%;
+  display: flex;
+}
+.header-area {
+  margin-bottom: 0;
+  width: 400px;
+}
+.front-card-container {
+  top: 25%;
+  bottom: auto;
+  left: 150px;
+  transform: translate(0, 25%);
+}
+.back-card-container {
+  top: auto;
+  left: 200px;
+  right: auto;
+  bottom: 35%;
+  transform: translate(0, 35%);
+}
+.main-content {
+  width: 75%;
+}
+form {
+  padding: 8rem 16rem;
+}
 }
