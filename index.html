@@ -83,7 +83,7 @@
                 name="name"
                 placeholder="e.g. Jane Appleseed"
                 required
-                oninput="updateCardContent('card-name', this.value)"
+                oninput="updateCardContent('card-name', this.value); limitInputLength(this, 25) "
               />
               <p class="error">Please enter a name</p>
             </div>
@@ -94,7 +94,9 @@
                 id="card-number"
                 name="card-number"
                 placeholder="e.g. 1234 5678 9123 0000"
-                oninput="updateCardContent('card-number', this.value)"
+                oninput="updateCardContent('card-number', this.value)
+                ;
+                limitInputLength(this, 19)"
                 required
               />
               <p class="error">Wrong format, numbers only</p>
