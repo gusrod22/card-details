@@ -56,9 +56,28 @@ submitButton.addEventListener("click", function (event) {
   }
 });
 
+const initialValues = {
+  "card-name": "Jane Appleseed",
+  "card-number": "0000 0000 0000 0000",
+  "mm": "00",
+  "yy": "00",
+  'cvc': "000",
+};
+
+function resetExampleSection() {
+  for (const key in initialValues) {
+    if (initialValues.hasOwnProperty(key)) {
+      const element = document.getElementById(key);
+      if (element) {
+        element.textContent = initialValues[key];
+      }
+    }
+  }
+}
+
 continueButton.addEventListener("click", function () {
   form.reset();
-
+  resetExampleSection();
   initialState.style.display = "block";
   completeState.style.display = "none";
 });
