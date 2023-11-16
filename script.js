@@ -20,6 +20,7 @@ submitButton.addEventListener("click", function (event) {
       const pattern = /^\d{4} \d{4} \d{4} \d{4}$/;
 
       if (!pattern.test(cardNumberValue)) {
+        formIsValid = false;
         if (error) {
           error.style.display = "block";
         }
@@ -37,8 +38,8 @@ submitButton.addEventListener("click", function (event) {
           error.style.display = "block";
         }
         input.classList.add("input-error");
+        formIsValid = false;
       } else {
-        formIsValid = true;
         if (error) {
           error.style.display = "none";
         }
